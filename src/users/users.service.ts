@@ -25,7 +25,9 @@ export class UsersService {
                 user.rank = maxRank.value + 1;
             }
             return this.usersRepository.create(user).save();
-        } catch (error) {}
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     public async updateUserList(usersList: UsersListDto[]) {
